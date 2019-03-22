@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Site Metas -->
+    <title>Draft Predictor</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="css/colors.css">
+    <!-- ALL VERSION CSS -->	
+    <link rel="stylesheet" href="css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- end font family -->
+    <link rel="stylesheet" href="css/3dslider.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="js/3dslider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAzWJwAKTxvAGhtbwAdOGIABSVnACQyWgA9VZQAEzF3ABA0iAA1TpAANVCbAB8wYQAhNF4AGS9cABs6dwAWK1cAGCZEAChImgAjPIIAJT13AAACBQA4UJQACyhhAGJ1ngAcLWMAECNOABY8jAAXNoQAGzBjACxMmAAfNGAASV59AC5JkAAbLlAAFSxWABIsZwAZL28AFi9nADZIiwAXN3oAJ0B5ACEybwAVKU8AJjx0AAkjaQAlR4cAHTJ4ACs9aQAYKlUAGipVAD1TjgA2VZEATVx0ABAxfAAqP30AKDpiACg+eABCU34AJT+GADlSkgAhQHMAGTN3AP///wAXNncAKkOMABUsYgD9/f0AHzBGACtEeQCYn7cAGTBXACxIjwASNokAFSljACpGlQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+FBQUFBQUPj4+Pj4+PkJCFC83Mg8xDBQ+Pj4+PkJCFDY8HElGMjIyFD4+PkJCFD4nNQMjHgQZAj4UPj5CFDk+Di4bPw0wQUM+KhQ+FDNAPgcaPiU+Ij4WPhAyFBQtOD4yPj4+Pj4+Mj4yMhQUHRI+Mj5EPgs+MjI+MjIUFBdKPiAyBQgBMjIpPjIyFD4UBj5FMjIyMjIyLD4yFD4+PhQ+FQomPUgkIRg+FD4+Pj4+FAA7ERMoOis0FD4+Pj4+Pj4UMjJHCR8yFD4+Pj4+Pj4+PhQUFBQUFD4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+</head>
+<body class="game_info" data-spy="scroll" data-target=".header">
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="images/loading-img.gif" alt="">
+    </div>
+    <!-- END LOADER -->
+    <section id="top">
+
+        <div class="inner-page-banner" >
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style=" background-color: rgba(0,0,0,0.5);padding-bottom: 25px">
+                    <div class="slider-contant" data-animation="animated fadeInRight">
+                        <a href="index.html"><h3>Draft <span class="color-yellow">Predictor</span></h3></a> 
+                        <p style="color: whitesmoke">Select a different school or player to know the chances to be drafted into NFL </p>
+                        <form>
+                            <div class="col-lg-2 col-md-2"></div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <select class="form-control" id="school-selector">
+                                        <option>Select a school</option>
+                                        <option>2</option> <!-- Delete, for demo porpose only -->
+                                        <option>3</option> <!-- Delete, for demo porpose only -->
+                                        <option>4</option> <!-- Delete, for demo porpose only -->
+                                        <option>5</option> <!-- Delete, for demo porpose only -->
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- Drop down for the students for the school selected previously -->
+
+                                    <select class="form-control" id="player-selector">
+                                        <option>Select player</option>
+                                        <option>2</option> <!-- Delete, for demo porpose only -->
+                                        <option>3</option> <!-- Delete, for demo porpose only -->
+                                        <option>4</option> <!-- Delete, for demo porpose only -->
+                                        <option>5</option> <!-- Delete, for demo porpose only -->
+
+                                    </select>
+                                    <!-- Search button -->
+                                    <button type="button" class="btn " style="float: right;" id="search-btn">Search</button>
+                                </div>
+
+                            </div><p style="align-self: center; color: whitesmoke">or</p>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-12"></div>
+                                <div class="col-lg-8 col-md-8 col-sm-12">
+                                    <button id="costum-btn" type="button" class="btn " style="width: 100%"  >Input your costums stats</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal" style="padding-top: 10%">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Insert your costum player information here</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <label for="exampleInputEmail1">Select Position</label>
+                            <select class="form-control" id="player-position">
+                                <option>Select Position</option>
+                                <option id="cs1" value="QB">Quarterback</option>
+                                <option id="cs2" value="RB">Running back</option>
+                                <option id="cs3" value="WR">Wide Receiver</option>
+                                <option id="cs4" value="TE">Tight End</option>
+                                <option id="cs5" value="DT">Defensive tackle</option>
+                                <option id="cs6" value="DE">Defensive end</option>
+                                <option id="cs7" value="DB">Defensive Back</option>
+                                <option id="cs8" value="LB">Line Backer</option>
+                                <option id="cs9" value="C">Center</option>
+                                <option id="cs10" value="G">Guard</option>
+                                <option id="cs11" value="T">Tackle</option>
+                                <option id="cs12" value="P">Punter</option>
+                                <option id="cs13" value="K">Kicker</option>                              
+
+                            </select>
+                        </div>
+                        <div class="col-lg-12 col-md-12 " id="cs-1"> 
+                            <form>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Passing attempt</label>
+                                    <input  class="form-control" id="exampleInputEmail1" aria-describedby="number of passes attempt" placeholder="Passing attempt">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Passing completion</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Passing completion">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Passing yards</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Passing yards">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Passing touchdown</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Passing touchdown">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Thrown interceptions</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Thrown interceptions">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Rushing attempts</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing attempts">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Rushing yards</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing yards">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Rushing touchdowns</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing touchdowns">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-12 col-md-12 " id="cs-2"> 
+                            <form>                                      
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Rushing attempts</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing attempts">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Rushing yards</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing yards">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Rushing touchdowns</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing touchdowns">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Receptions</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Receptions">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Receiving yards</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving yards">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Receiving touchdowns</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving touchdowns">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-12 col-md-12 " id="cs-3"> 
+                            <form>                                      
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Receptions</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Receptions">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Receiving yards</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving yards">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Receiving touchdowns</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving touchdowns">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-12 col-md-12 " id="cs-4"> 
+                            <form>                                      
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Tackles</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Tackles">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Interceptions</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Interceptions">
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4">
+                                    <label>Sacks</label>
+                                    <input  class="form-control" id="exampleInputPassword1" placeholder="Sacks">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-12 col-md-12 " id="cs-5"> 5555</div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn " style="float: right;" >Search</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="matchs-info" style="background-color: #0e55b6">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-2"><img src="images/11.png" alt="" style="width: 50%;  margin-left:auto; margin-right:auto; "> </div>
+                <div class="col-md-2 col-sm-2 col-xs-2"> <img src="images/12.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""></div>
+                <div class="col-md-2 col-sm-2 col-xs-2"><img src="images/13.png"  style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                <div class="col-md-2 col-sm-2 col-xs-2"><img src="images/14.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                <div class="col-md-2 col-sm-2 col-xs-2"><img src="images/15.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                <div class="col-md-2 col-sm-2 col-xs-2"> <img src="images/16.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <u><h2 style="text-align: center;">The drafting process:</h2></u>
+            <p>The annual NFL Draft gives the teams the opportunity to infuse their rosters with new talent.</p>
+            <p>Currently, each of the 32 clubs receives one pick in each of the seven rounds of the NFL Draft (the number of teams drafting has changed over time, and there have been as many as 30 rounds in a single draft).</p>
+            <p>Once teams are assigned their draft positions, each pick is an asset: It’s up to the club’s executives to either select a player or trade the pick to another team to improve its position in the current or future drafts. Teams may negotiate trades at any time before and during the draft and can swap draft picks or current NFL players to whom they hold the rights.</p>
+            <p>Each February, hundreds of the very best college football players are invited to the NFL Scouting Combine in Indianapolis, Ind., where executives, coaches, scouts and doctors from all 32 NFL teams conduct an intense, four-day job interview in advance of the NFL Draft. Here is a brief breakdown of the measurable drills:</p>
+            <p>• 40-yard dash • Bench press  • Vertical jump • Broad jump • 3 cone drill • Shuttle run</p>
+        </div>
+        <div class="col-lg-6" style="align-content: center; "><img src="images/NFL_Draft.jpg" alt="" style="width: 100%; height: 80%;  margin-left:auto; margin-right:auto;"></div>
+    </div>
+
+    <div class="matchs-info" style="background-color: #0e55b6">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row"><br><br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="col-lg-6"><img src="images/hypothesis.jpg" alt="" style="width: 100%; height: 80%;  margin-left:auto; margin-right:auto; align-content: center; "></div>
+
+
+        <div class="col-lg-6">
+            <u><h2 style="text-align: center;">The hypothesis</h2></u>
+            <p>In view of the long and extensive selection process, most of the efforts in predicting the draftees happens after the NFL Combine Bootcamp.</p>
+            <p>This project aims to analyze player's performance throughout the season, and by having all drafts history since 1970, we can create an average player for a team compare which player follows the trend to be selected by each team.</p>
+            <p>Our thesis is that by having an extensive data on past draftees and their performance, we can compare with NFL prospects and determinate the likelihood of that player to be drafted and by which team.</p>
+        </div>
+    </div>
+
+    <div class="matchs-info" style="background-color: #0e55b6">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row"><br><br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" >
+
+        <div class="col-lg-6">
+            <u><h2 style="text-align: center;">The data:</h2></u>
+            <p>For this project we needed two different informations: Player's stats and who got drafted</p>
+            <p>We were able to aquire information of drafted players ranging from 1970 up to player's stats from the 2017 college football season, with over 14.000 entries  </p>
+
+            <table class="table">
+                <thead>
+                    <tr></tr>
+                    <tr>
+                        <th>Round</th>
+                        <th>Pick</th>
+                        <th>Team</th>
+                        <th>Position</th>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <th>Year</th>
+                        <th>College</th>
+                        <th>Pass_Cmp	</th>
+
+                    </tr>
+                    <tr>
+                        <th>Pass_Att	</th>
+                        <th>Pass_Yds	</th>
+                        <th>Pass_TD	</th>
+                        <th>Thrown_Int	</th></tr>
+                    <tr>
+                        <th>Rush_Att	</th>
+                        <th>Rush_Yds	</th>
+                        <th>Rush_TD</th>
+                        <th>Rec </th>
+                    </tr>
+                    <tr>
+                        <th>Rec_Yds</th>	
+                        <th>Rec_TD</th>	
+                        <th>Tkl	</th>
+                        <th>Int	</th>
+                        <th>Sk</th>
+
+
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+
+        <div class="col-lg-6"><img src="images/stats.jpg" alt="" style="width: auto; height: 100%;  margin-left:auto; margin-right:auto; align-content: center; "></div>
+    </div>
+    <div class="matchs-info" style="background-color: #0e55b6">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row"><br><br>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6"><img src="images/eer.png" alt="" style="width: 70%; height: auto;  margin-left:auto; margin-right:auto; align-content: center; "></div>
+
+        <div class="col-lg-6">
+            <u><h2 style="text-align: center;">The archteture of the database:</h2></u>
+            <p>The dataset was the base to define the archteture of the database</p>
+            <p>The databse is normalized in BCNF</p>
+            
+        </div>
+
+    </div>
+    <div class="matchs-info" style="background-color: #0e55b6">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row"><br><br>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <h3 style="text-align: center;">Queries </h3>
+            <p>•Look at teams selection history</p>
+            <p>•Look for players who got pro bowl and/or AP1 and compare the difference in productivity</p>
+            <p>•Chek the completion to interception ratio</p>
+            <p>•Look stats average per team </p>
+            <p>•Look at colleges that produced players</p>
+            <p>•Look at colleges that also produced multiple Pro Bowlers</p>
+            <p>•Look at player's time in league</p>
+            <p>•Look at teams top decisions with pass stats then compare to teams worst pick with pass stats</p>
+            <p>•Look for players who got pro bowl and/or AP1 and compare the difference in productivity</p>
+            <p>- Different positions may have specifics aspects:</p>
+            <p>•Look at QB's rush stats from could tell if he was a dual QB or not</p>
+            <p>•See if the QB had reception (It shows was trusting in their athletic ability</p>
+            
+            
+        </div>
+        <div class="col-lg-6"><img src="images/query.jpg" alt="" style="width: auto; height: 100%;  margin-left:auto; margin-right:auto; align-content: center; "></div>
+    </div>
+    <div class="matchs-info" style="background-color: #0e55b6">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row"><br><br>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6"><img src="images/test.png" alt="" style="width: auto; height: 100%;  margin-left:auto; margin-right:auto; align-content: center; "></div>
+        <div class="col-lg-6">
+            <h3 style="text-align: center;">Conclusions </h3>
+        </div>
+
+    </div>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-2">
+                    <div class="full">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+
+                <a href="index.html"><h3><span style="color: white">Draft</span> <span class="color-yellow">Predictor</span></h3></a>
+
+
+
+                <p>Term project for the Database management class. | Made by RedDawgs </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+
+
+
+
+    <script>
+        var barChartData = {
+            labels: ['1970', '1975', '1980', '1985', '1990', '1995', '2000', '2005', '2010', '2015', ],
+            datasets: [{
+                    label: 'A1',
+                    backgroundColor: 'rgba(0, 255, 102, 0.65)',
+                    stack: 'Stack 0',
+                    data: [
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    label: 'A2',
+                    backgroundColor: 'rgba(0, 0, 102, 0.65)',
+                    stack: 'Stack 0',
+                    data: [
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1
+                    ]
+                }, {
+                    label: 'A3',
+                    backgroundColor: 'rgba(255, 102, 0, 0.65)',
+                    stack: 'Stack 0',
+                    data: [
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3
+                    ]
+                },
+                {
+                    label: 'D1',
+                    backgroundColor: 'rgba(98, 255, 102, 0.65)',
+                    stack: 'Stack 1',
+                    data: [
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1
+                    ]
+                }, {
+                    label: 'D2',
+                    backgroundColor: 'rgba(79, 4, 158, 0.65)',
+                    stack: 'Stack 1',
+                    data: [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ]
+                }, {
+                    label: 'D3',
+                    backgroundColor: 'rgba(25, 12, 220, 0.65)',
+                    stack: 'Stack 1',
+                    data: [
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3,
+                        3
+                    ]
+                }]
+
+        };
+
+        var ctx = document.getElementById('canvas').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                title: {
+                    display: true,
+                    text: 'Number of players drafted per year'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false
+                },
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                            stacked: true,
+                        }],
+                    yAxes: [{
+                            stacked: true
+                        }]
+                }
+            }
+        });
+
+    </script>
+
+    <script>
+        var ctx = document.getElementById("myChart2").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["AP1", "PB", "St", "Cmp", "Att", "Yds", "Int"],
+                datasets: [{
+                        label: 'Skill',
+                        data: [1, 2, 3, 4, 5, 6, 7],
+                        backgroundColor: [
+                            'rgba(0, 102, 255, 0.65)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 102, 255,,1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                scales: {
+
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var ctx = document.getElementById("myChart3").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["AP1", "PB", "St", "Cmp", "Att", "Yds", "Int"],
+                datasets: [{
+                        label: 'Skill',
+                        data: [1, 2, 3, 4, 5, 6, 7],
+                        backgroundColor: [
+                            'rgba(0, 102, 255, 0.65)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 102, 255,1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                scales: {
+
+                }
+            }
+        });
+    </script>
+    <script>
+        var ctx = document.getElementById("myChart4").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["AP1", "PB", "St", "Cmp", "Att", "Yds", "Int"],
+                datasets: [{
+                        label: 'Skill',
+                        data: [1, 2, 3, 4, 5, 6, 7],
+                        backgroundColor: [
+                            'rgba(0, 102, 255, 0.65)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 102, 255,1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                scales: {
+
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("costum-btn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Get DIVs in which the user input costum data
+        var mod1 = document.getElementById('cs-1');
+        var mod2 = document.getElementById('cs-2');
+        var mod3 = document.getElementById('cs-3');
+        var mod4 = document.getElementById('cs-4');
+        var mod5 = document.getElementById('cs-5');
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+            mod1.style.display = "none";
+            mod2.style.display = "none";
+            mod3.style.display = "none";
+            mod4.style.display = "none";
+            mod5.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var select = document.getElementById("player-position");
+
+        select.onclick = function ()
+        {
+            if (select.value === 'QB') {
+                mod1.style.display = "block";
+                mod2.style.display = "none";
+                mod3.style.display = "none";
+                mod4.style.display = "none";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'RB') {
+                mod1.style.display = "none";
+                mod2.style.display = "block";
+                mod3.style.display = "none";
+                mod4.style.display = "none";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'WR' || select.value === 'TE') {
+                mod1.style.display = "none";
+                mod2.style.display = "none";
+                mod3.style.display = "block";
+                mod4.style.display = "none";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'DT' || select.value === 'DE' || select.value === 'DB' || select.value === 'LB') {
+                mod1.style.display = "none";
+                mod2.style.display = "none";
+                mod3.style.display = "none";
+                mod4.style.display = "block";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'C' || select.value === 'G' || select.value === 'T' || select.value === 'P' || select.value === 'K') {
+                mod1.style.display = "none";
+                mod2.style.display = "none";
+                mod3.style.display = "none";
+                mod4.style.display = "none";
+                mod5.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

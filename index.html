@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Site Metas -->
+    <title>Draft Predictor</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="css/colors.css">
+    <!-- ALL VERSION CSS -->	
+    <link rel="stylesheet" href="css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- end font family -->
+    <link rel="stylesheet" href="css/3dslider.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="js/3dslider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAzWJwAKTxvAGhtbwAdOGIABSVnACQyWgA9VZQAEzF3ABA0iAA1TpAANVCbAB8wYQAhNF4AGS9cABs6dwAWK1cAGCZEAChImgAjPIIAJT13AAACBQA4UJQACyhhAGJ1ngAcLWMAECNOABY8jAAXNoQAGzBjACxMmAAfNGAASV59AC5JkAAbLlAAFSxWABIsZwAZL28AFi9nADZIiwAXN3oAJ0B5ACEybwAVKU8AJjx0AAkjaQAlR4cAHTJ4ACs9aQAYKlUAGipVAD1TjgA2VZEATVx0ABAxfAAqP30AKDpiACg+eABCU34AJT+GADlSkgAhQHMAGTN3AP///wAXNncAKkOMABUsYgD9/f0AHzBGACtEeQCYn7cAGTBXACxIjwASNokAFSljACpGlQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+FBQUFBQUPj4+Pj4+PkJCFC83Mg8xDBQ+Pj4+PkJCFDY8HElGMjIyFD4+PkJCFD4nNQMjHgQZAj4UPj5CFDk+Di4bPw0wQUM+KhQ+FDNAPgcaPiU+Ij4WPhAyFBQtOD4yPj4+Pj4+Mj4yMhQUHRI+Mj5EPgs+MjI+MjIUFBdKPiAyBQgBMjIpPjIyFD4UBj5FMjIyMjIyLD4yFD4+PhQ+FQomPUgkIRg+FD4+Pj4+FAA7ERMoOis0FD4+Pj4+Pj4UMjJHCR8yFD4+Pj4+Pj4+PhQUFBQUFD4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+</head>
+<body class="game_info" data-spy="scroll" data-target=".header">
+
+
+    <header>
+        <div class="container">
+
+        </div>
+    </header>
+    <div class="full-slider">
+        <div id="carousel-example-generic" class="carousel slide">
+
+            <
+            <div class="carousel-inner" role="listbox">
+
+                <div class="item active deepskyblue">
+                    <div class="carousel-caption">
+                        <div class="col-lg-3 col-md-3 "></div>
+                        <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12" style=" background-color: rgba(0,0,0,0.5);" >
+                            <div class="slider-contant" data-animation="animated fadeInRight">
+                                <h3>Draft <span class="color-yellow">Predictor</span></h3>
+                                <p>Select a school and a player to know the chances to be drafted into the NFL 
+                                </p>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <!-- Here is the drop down for school selection -->
+
+                                            <select class="form-control" id="school-selector">
+                                                <option>Select a school</option>
+                                            </select>
+
+                                        </div>
+                                                                                
+                                        <div class="col-md-6">
+
+                                            <!-- Drop down for the students for the school selected previously -->
+
+                                            <select class="form-control" id="player-selector">
+                                                <option>Select player</option>
+                                            </select>
+
+                                            <!-- Search button -->
+                                            <button type="button" class="btn " style="float: right;" id="search-btn" onClick="redirect()" >Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-12"></div>
+                                        <div class="col-lg-8 col-md-8 col-sm-12">
+
+                                            <!-- button to imput stats -->
+                                            <button id="custom-btn" type="button" class="btn " style="width: 100%"" >Input your custom stats</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="myModal" class="modal" style="padding-top: 10%">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Insert your custom player information here</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-12">
+                                    <label for="exampleInputEmail1">Select Position</label>
+                                    <select class="form-control" id="player-position">
+                                        <option>Select Position</option>
+                                        <option id="cs1" value="QB">Quarterback</option>
+                                        <option id="cs2" value="RB">Running back</option>
+                                        <option id="cs3" value="WR">Wide Receiver</option>
+                                        <option id="cs4" value="TE">Tight End</option>
+                                        <option id="cs5" value="DT">Defensive tackle</option>
+                                        <option id="cs6" value="DE">Defensive end</option>
+                                        <option id="cs7" value="DB">Defensive Back</option>
+                                        <option id="cs8" value="LB">Line Backer</option>
+                                        <option id="cs9" value="C">Center</option>
+                                        <option id="cs10" value="G">Guard</option>
+                                        <option id="cs11" value="T">Tackle</option>
+                                        <option id="cs12" value="P">Punter</option>
+                                        <option id="cs13" value="K">Kicker</option>                              
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-12 col-md-12 " id="cs-1"> 
+                                    <form>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Passing attempt</label>
+                                            <input  class="form-control" id="pATT" aria-describedby="number of passes attempt" placeholder="Passing attempt">
+                                        </div>
+                                        <!--<div class="form-group col-lg-2 col-md-4">
+                                            <label>Passing completion</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Passing completion">
+                                        </div>-->
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Passing yards</label>
+                                            <input  class="form-control" id="pYD" placeholder="Passing yards">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Passing touchdown</label>
+                                            <input  class="form-control" id="pTD" placeholder="Passing touchdown">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Thrown interceptions</label>
+                                            <input  class="form-control" id="tINT" placeholder="Thrown interceptions">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Rushing attempts</label>
+                                            <input  class="form-control" id="rATT" placeholder="Rushing attempts">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Rushing yards</label>
+                                            <input  class="form-control" id="rYD" placeholder="Rushing yards">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Rushing touchdowns</label>
+                                            <input  class="form-control" id="rTD" placeholder="Rushing touchdowns">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-12 col-md-12 " id="cs-2"> 
+                                    <form>                                      
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Rushing attempts</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing attempts">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Rushing yards</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing yards">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Rushing touchdowns</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Rushing touchdowns">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Receptions</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Receptions">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Receiving yards</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving yards">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Receiving touchdowns</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving touchdowns">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-12 col-md-12 " id="cs-3"> 
+                                    <form>                                      
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Receptions</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Receptions">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Receiving yards</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving yards">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Receiving touchdowns</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Receiving touchdowns">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-12 col-md-12 " id="cs-4"> 
+                                    <form>                                      
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Tackles</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Tackles">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Interceptions</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Interceptions">
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4">
+                                            <label>Sacks</label>
+                                            <input  class="form-control" id="exampleInputPassword1" placeholder="Sacks">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-12 col-md-12 " id="cs-5"> 5555</div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn " style="float: right;" onClick="customRedirect()">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Line of school logos -->
+
+        <div class="matchs-info">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/1.png" alt="" style="width: 50%;  margin-left:auto; margin-right:auto; "> </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3"> <img src="images/2.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""></div>
+                    <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/3.png"  style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/4.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/5.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3"> <img src="images/6.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row" style="background-color: #DEDEE4">
+
+                <!-- Left box for the infographic part -->
+                <a href="teams.html"><div class="col-md-6 col-sm-6 col-xs-12" style="background-color: whitesmoke">
+                    <div class="col-md-12 col-sm-12 col-xs-12 border-bottom" style="border-bottom-color: #67b168; border-bottom: 50px #67b168">
+                        <h1>Graphics and charts!</h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" >
+                        <h2>Click here to see charts on draft statistics</h2>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 border" >
+
+                        <!-- Random chart -->
+                        <canvas id="random-chart" width="400" height="400"></canvas>
+
+                    </div>
+
+                    </div></a>
+                <!-- Right box, for the database archteture explanation -->
+                <a href="presentation.html"><div class="col-md-6 col-sm-6 col-xs-12" >
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="border-bottom-color: #67b168; border-bottom: 50px #67b168"><h1 >Database Architecture</h1></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" ><h2>Click here to learn more about dataset, tables and queries.</h2></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12"> </div>
+                </div></a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Line of NFL team logos -->
+    <div class="matchs-info" style="background-color: #0e55b6">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/11.png" alt="" style="width: 50%;  margin-left:auto; margin-right:auto; "> </div>
+                <div class="col-md-2 col-sm-2 col-xs-3"> <img src="images/12.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""></div>
+                <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/13.png"  style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/14.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                <div class="col-md-2 col-sm-2 col-xs-3"><img src="images/15.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""> </div>
+                <div class="col-md-2 col-sm-2 col-xs-3"> <img src="images/16.png" style="width: 50%; margin-left:auto; margin-right:auto;" alt=""></div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-2">
+                    <div class="full">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+
+                <a href="index.html"><h3><span style="color: white">Draft</span> <span class="color-red">Predictor</span></h3></a>
+
+
+
+                <p>Term project for the Database management class. | Made by RedDawgs </p>
+            </div>
+        </div>
+    </footer>
+    <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+  
+    <script>
+        function customRedirect () {
+            var patt = document.getElementById('pATT').value;
+            var pyd = document.getElementById('pYD').value;
+            var ptd = document.getElementById('pTD').value;
+            var tint = document.getElementById('tINT').value;
+            var ratt = document.getElementById('rATT').value;
+            var ryd = document.getElementById('rYD').value;
+            var rtd = document.getElementById('rTD').value;
+            var url = "player.html?name=" + "CUSTOM_PLAYER" + "&pos=" + "QB" + "&clg=" + "CUSTOM_PLAYER" + "&pId=" + "NULL" + "&custom=true"
+                        + "&patt=" + patt + "&pyd=" + pyd + "&ptd=" + ptd + "&tint=" + tint + "&ratt=" + ratt + "&ryd=" + ryd + "&rtd=" + rtd;
+            window.location.href = url;
+        }
+        function redirect () {	//When you press the search button, this function is called
+		var playerSelect = document.getElementById('player-selector');
+        $.ajax( { type : 'POST',
+                  data : { q: '' + playerSelect.options[playerSelect.selectedIndex].value }, //Get the values of the player given his player_ID
+                  url  : '/php/getPlayer.php',
+                  success:function(data){
+						var name = (data.result.Name); 		//Player name
+						var age = (data.result.Age);   		//Player age
+						var college = (data.result.College);//Player college
+						var P_Id = (data.result.Players_ID);//Player's ID
+						var pos = (data.result.Pos);		//Position they played
+						
+						//Create a url that we will be redirecting the user to, passing over the values in the URL.
+						//For testing purposes, name, college, pos were added in the URl to pass over. All that is needed to pass over is P_Id
+						//and if the player is a custom player or is instead a player we have selected from the dropdown list
+						var url = "player.html?name=" + name + "&pos=" + pos + "&clg=" + college + "&pId=" + P_Id + "&custom=false";
+						window.location.href = url;
+                  },
+                  error: function ( xhr ) {
+                    alert( "error" );
+                  },
+				  dataType:"json"
+                });
+        }
+    </script>
+    
+    <script>
+    //When you select a value from school-selector, it will generate a 
+    //corresponding list for player-selector.
+    var schoolSelect = document.getElementById("school-selector");
+    schoolSelect.onclick = function () {					
+		var playerSelect = document.getElementById('player-selector');
+		$.ajax( { type : 'POST',
+                  data : { q: '' + schoolSelect.options[schoolSelect.selectedIndex].value },
+                  url  : '/php/findPlayers.php', //findPlayers.php holds the relevant SQL statement to retrieve below data value
+                  success:function(data){		 //successfully got data back from findPlayers.php
+					removeOptions(playerSelect); //clear the list of current players, as we're about to add new ones						
+					var schoolSelect = document.getElementById('school-selector');
+					for(var i = 0; i < data.total; i++) { //for each row we received from findPlayers.php, make a new option in the dropdown list 
+						playerSelect.options[i] = new Option(data[i].name, data[i].pId, false, false);
+					}
+                  },
+                  error: function ( xhr ) {
+                    alert( "error" );
+                  },
+				  dataType:"json"
+                });
+	}
+    
+    function removeOptions(selectList) { // Clears the dropdown list of your choice.
+        for(var spot = selectList.options.length-1; spot >=0; spot--)
+            selectList.remove(spot);
+    }
+    </script>
+    <script>
+    //Fills up the values of school-selector dropdown list with all the schools in the database
+	$.ajax( { type : 'POST',
+                  data : { },
+                  url  : '/php/findColleges.php', //findColleges holds the relevant SQL statement to retrieve below data value
+                  success:function(data){		  //succesfully got data back from findColleges.php
+					var schoolSelect = document.getElementById('school-selector');
+					for(var i = 1; i < data.total; i++) { //for each row ew received from findColleges.php, make a new option in the dropdown list
+						schoolSelect.options[i] = new Option(data[i].college, data[i].college, false, false);
+					}
+                  },
+                  error: function ( xhr ) {
+                    alert( "error" );
+                  },
+				  dataType:"json"
+            });
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("custom-btn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Get DIVs in which the user input custom data
+        var mod1 = document.getElementById('cs-1');
+        var mod2 = document.getElementById('cs-2');
+        var mod3 = document.getElementById('cs-3');
+        var mod4 = document.getElementById('cs-4');
+        var mod5 = document.getElementById('cs-5');
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+            mod1.style.display = "none";
+            mod2.style.display = "none";
+            mod3.style.display = "none";
+            mod4.style.display = "none";
+            mod5.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var select = document.getElementById("player-position");
+
+        select.onclick = function ()
+        {
+            if (select.value === 'QB') {
+                mod1.style.display = "block";
+                mod2.style.display = "none";
+                mod3.style.display = "none";
+                mod4.style.display = "none";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'RB') {
+                mod1.style.display = "none";
+                mod2.style.display = "block";
+                mod3.style.display = "none";
+                mod4.style.display = "none";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'WR' || select.value === 'TE') {
+                mod1.style.display = "none";
+                mod2.style.display = "none";
+                mod3.style.display = "block";
+                mod4.style.display = "none";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'DT' || select.value === 'DE' || select.value === 'DB' || select.value === 'LB') {
+                mod1.style.display = "none";
+                mod2.style.display = "none";
+                mod3.style.display = "none";
+                mod4.style.display = "block";
+                mod5.style.display = "none";
+            }
+            if (select.value === 'C' || select.value === 'G' || select.value === 'T' || select.value === 'P' || select.value === 'K') {
+                mod1.style.display = "none";
+                mod2.style.display = "none";
+                mod3.style.display = "none";
+                mod4.style.display = "none";
+                mod5.style.display = "block";
+            }
+        }
+    </script>
+
+    <!-- Chart script -->
+    <script>
+        var ctx = document.getElementById("random-chart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["Rush", "Passes", "Tackles", "TD", "Int", "Yards"],
+                datasets: [{
+                        label: 'QB - Falcons',
+                        data: [32, 64, 24, 69, 47, 39],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                scales: {
+
+                }
+            }
+        });
+    </script>
+
+</body>             
+</html>
