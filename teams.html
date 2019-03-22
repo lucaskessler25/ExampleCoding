@@ -343,30 +343,6 @@
         </div>
     </div>
 
-    <script>
-        var label = ["Team Name", "Pass_Att", "Pass_Yds", "Pass_TD", "Thrown_Int", "Rush_Att", "Rush_Yds", "Rush_TD"];
-        $.ajax({type: 'POST',
-            data: {},
-            url: '/php/teamAvg.php', // <=== CALL THE PHP FUNCTION HERE.
-            success: function (data) {
-
-                var table = document.getElementById("stats-tb");
-                for (var r = 0; r < 32; r++)
-                {
-                    var pStats = [data[r].team, data[r].pass_att, data[r].pass_yds, data[r].pass_td, data[r].thrown_int, data[r].rush_att, data[r].rush_yds, data[r].rush_td];
-                    var row2 = table.insertRow(r + 1);
-                    for (var i = 0; i < label.length; i++) {
-                        //cell = row.insertCell(i).innerHTML = "<p style='color: whitesmoke'>" + label[i] + "</p>";
-                        cell2 = row2.insertCell(i).innerHTML = pStats[i];
-                    }
-                }
-            }, error: function (xhr) {
-                alert("error");
-            },
-            dataType: "json"
-        });
-    </script>
-
     <div class='row'>
         <div class="col-md-12">
 
@@ -407,28 +383,7 @@
         </div>
     </div>
 
-    <script>
 
-        $.ajax({type: 'POST',
-            data: {},
-            url: '/php/getAcl.php', // <=== CALL THE PHP FUNCTION HERE.
-            success: function (data) {
-
-                var table = document.getElementById("pro-tb");
-                for (var r = 0; r < data.total; r++)
-                {
-                    var row2 = table.insertRow(r + 1);
-                    cell1 = row2.insertCell(0).innerHTML = data[r].name;
-                    cell2 = row2.insertCell(1).innerHTML = data[r].pro_bowls;
-                    cell3 = row2.insertCell(2).innerHTML = data[r].ap1;
-
-                }
-            }, error: function (xhr) {
-                alert("error");
-            },
-            dataType: "json"
-        });
-    </script>
 
     <footer id="footer" class="footer">
         <div class="container">
@@ -463,8 +418,59 @@
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
 
+	<!-- 
+	
+	
+		LUCAS KESSLER WROTE THE BELOW!
+	
 
+	
+	-->
+    <script>
+        var label = ["Team Name", "Pass_Att", "Pass_Yds", "Pass_TD", "Thrown_Int", "Rush_Att", "Rush_Yds", "Rush_TD"];
+        $.ajax({type: 'POST',
+            data: {},
+            url: '/php/teamAvg.php', // <=== CALL THE PHP FUNCTION HERE.
+            success: function (data) {
 
+                var table = document.getElementById("stats-tb");
+                for (var r = 0; r < 32; r++)
+                {
+                    var pStats = [data[r].team, data[r].pass_att, data[r].pass_yds, data[r].pass_td, data[r].thrown_int, data[r].rush_att, data[r].rush_yds, data[r].rush_td];
+                    var row2 = table.insertRow(r + 1);
+                    for (var i = 0; i < label.length; i++) {
+                        //cell = row.insertCell(i).innerHTML = "<p style='color: whitesmoke'>" + label[i] + "</p>";
+                        cell2 = row2.insertCell(i).innerHTML = pStats[i];
+                    }
+                }
+            }, error: function (xhr) {
+                alert("error");
+            },
+            dataType: "json"
+        });
+    </script>
+	
+    <script>
+        $.ajax({type: 'POST',
+            data: {},
+            url: '/php/getAcl.php', // <=== CALL THE PHP FUNCTION HERE.
+            success: function (data) {
+
+                var table = document.getElementById("pro-tb");
+                for (var r = 0; r < data.total; r++)
+                {
+                    var row2 = table.insertRow(r + 1);
+                    cell1 = row2.insertCell(0).innerHTML = data[r].name;
+                    cell2 = row2.insertCell(1).innerHTML = data[r].pro_bowls;
+                    cell3 = row2.insertCell(2).innerHTML = data[r].ap1;
+
+                }
+            }, error: function (xhr) {
+                alert("error");
+            },
+            dataType: "json"
+        });
+    </script>
 
     <script>
         var QBInfo = [];
@@ -866,6 +872,12 @@
 
     </script>
 
+	<!-- 
+	
+		END OF WHAT LUCAS KESSLER WROTE!
+	
+	-->
+	
     <script>
         var ctx = document.getElementById("myChart2").getContext('2d');
         var myChart = new Chart(ctx, {
